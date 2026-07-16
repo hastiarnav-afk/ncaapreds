@@ -1,0 +1,28 @@
+MODEL 1 -- Linear Regression (Wins ~ Four Factors)
+             coef  std_err   t_stat  p_value
+Intercept  9.2575   2.0824   4.4455      0.0
+EFG_O      0.9225   0.0200  46.0291      0.0
+EFG_D     -0.9269   0.0212 -43.7558      0.0
+TOR       -0.8459   0.0283 -29.9041      0.0
+TORD       0.8893   0.0266  33.4461      0.0
+ORB        0.3591   0.0148  24.3137      0.0
+DRB       -0.3680   0.0192 -19.2106      0.0
+FTR        0.1128   0.0112  10.0585      0.0
+FTRD      -0.1632   0.0100 -16.3546      0.0
+ADJ_T      0.1297   0.0172   7.5568      0.0
+R^2=0.8658  Adj R^2=0.8652
+2019 forecast: RMSE=2.52 wins  MAE=1.99 wins  R^2=0.844
+
+MODEL 2 -- Logistic Regression (Made Tournament ~ Efficiency)
+  ADJOE: beta=+1.568  odds_ratio=4.80
+  ADJDE: beta=-1.300  odds_ratio=0.27
+  ADJ_T: beta=+0.097  odds_ratio=1.10
+2019 forecast: Accuracy=0.901 Precision=0.811 Recall=0.632 F1=0.711 AUC=0.907 Brier=0.0791
+
+EXTENSION -- Random Forest (Sweet16+ among tourney teams)
+WAB      0.374
+ADJOE    0.337
+ADJDE    0.205
+ADJ_T    0.083
+2019 forecast: Accuracy=0.971 AUC=0.974
+Seed-only baseline: Accuracy=0.941 AUC=0.954
